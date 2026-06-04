@@ -1,4 +1,10 @@
+import { useLang } from '../context/LangContext'
+import translations from '../i18n'
+
 export default function Hero() {
+  const { lang } = useLang()
+  const t = translations[lang]
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated ocean background */}
@@ -29,27 +35,26 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <p className="text-cyan-400 tracking-[0.4em] text-sm font-medium uppercase mb-4">
-          Born in the Ocean
+          {t['hero.sub']}
         </p>
         <h1 className="text-[clamp(4rem,15vw,12rem)] leading-none font-['Bebas_Neue'] text-gradient-ocean mb-6">
           BEAT<br />DIVER
         </h1>
-        <p className="text-slate-300 text-lg md:text-xl font-light max-w-xl mx-auto mb-10 leading-relaxed">
-          波と共に生きるサーファーのために。<br />
-          海の鼓動を纏うファッションブランド。
+        <p className="text-slate-300 text-lg md:text-xl font-light max-w-xl mx-auto mb-10 leading-relaxed whitespace-pre-line">
+          {t['hero.desc']}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#collection"
             className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-full transition-all duration-200 tracking-wide hover:scale-105"
           >
-            Collection を見る
+            {t['hero.cta1']}
           </a>
           <a
             href="#story"
             className="px-8 py-4 border border-cyan-500/50 hover:border-cyan-400 text-cyan-300 hover:text-cyan-200 rounded-full transition-all duration-200 tracking-wide hover:scale-105"
           >
-            Our Story
+            {t['hero.cta2']}
           </a>
         </div>
       </div>

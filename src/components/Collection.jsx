@@ -1,3 +1,6 @@
+import { useLang } from '../context/LangContext'
+import translations from '../i18n'
+
 const products = [
   {
     id: 1,
@@ -71,7 +74,7 @@ const products = [
   },
 ]
 
-function ProductCard({ product }) {
+function ProductCard({ product, t }) {
   return (
     <div className="group relative rounded-2xl overflow-hidden bg-ocean-glass hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1">
       <div className={`h-64 bg-gradient-to-br ${product.color} flex items-center justify-center relative overflow-hidden`}>
@@ -93,7 +96,7 @@ function ProductCard({ product }) {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e14]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
           <button className="px-6 py-2 bg-cyan-500 text-black font-semibold rounded-full text-sm tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-            Add to Cart
+            {t['collection.addToCart']}
           </button>
         </div>
       </div>
@@ -108,19 +111,22 @@ function ProductCard({ product }) {
 }
 
 export default function Collection() {
+  const { lang } = useLang()
+  const t = translations[lang]
+
   return (
     <section id="collection" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <p className="text-cyan-400 tracking-[0.4em] text-sm font-medium uppercase mb-3"></p>
         <h2 className="text-6xl md:text-8xl font-['Bebas_Neue'] text-white">Collection</h2>
         <p className="mt-4 text-slate-400 max-w-md mx-auto">
-          海の色をまとった、波乗り人のための限定コレクション。
+          {t['collection.desc']}
         </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map(product => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} t={t} />
         ))}
       </div>
 
@@ -129,7 +135,7 @@ export default function Collection() {
           href="#"
           className="inline-block px-8 py-3 border border-slate-600 hover:border-cyan-500 text-slate-300 hover:text-cyan-300 rounded-full transition-all duration-200 tracking-wide text-sm"
         >
-          View All Products
+          {t['collection.viewAll']}
         </a>
       </div>
     </section>

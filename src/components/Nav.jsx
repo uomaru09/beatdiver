@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useLang } from '../context/LangContext'
+import translations from '../i18n'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { lang, toggleLang } = useLang()
+  const t = translations[lang]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -35,26 +39,50 @@ export default function Nav() {
           ))}
         </ul>
 
-        <a
-          href="#collection"
-          className="hidden md:block px-5 py-2 bg-cyan-500 hover:bg-cyan-400 text-black text-sm font-semibold rounded-full transition-colors tracking-wide"
-        >
-          Shop Now
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          {/* Language toggle */}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1 text-xs font-semibold tracking-widest text-slate-400 hover:text-cyan-400 transition-colors"
+            aria-label="Toggle language"
+          >
+            <span className={lang === 'en' ? 'text-cyan-400' : 'text-slate-600'}>EN</span>
+            <span className="text-slate-600">/</span>
+            <span className={lang === 'ja' ? 'text-cyan-400' : 'text-slate-600'}>JP</span>
+          </button>
+
+          <a
+            href="#collection"
+            className="px-5 py-2 bg-cyan-500 hover:bg-cyan-400 text-black text-sm font-semibold rounded-full transition-colors tracking-wide"
+          >
+            {t['nav.shopNow']}
+          </a>
+        </div>
 
         {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-slate-300"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {menuOpen
-              ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            }
-          </svg>
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleLang}
+            className="text-xs font-semibold tracking-widest text-slate-400 hover:text-cyan-400 transition-colors"
+            aria-label="Toggle language"
+          >
+            <span className={lang === 'en' ? 'text-cyan-400' : 'text-slate-600'}>EN</span>
+            <span className="text-slate-600">/</span>
+            <span className={lang === 'ja' ? 'text-cyan-400' : 'text-slate-600'}>JP</span>
+          </button>
+          <button
+            className="text-slate-300"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {menuOpen
+                ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              }
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

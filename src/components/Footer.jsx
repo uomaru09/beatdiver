@@ -1,12 +1,26 @@
+import { useLang } from '../context/LangContext'
+import translations from '../i18n'
+
 export default function Footer() {
+  const { lang } = useLang()
+  const t = translations[lang]
+
+  const links = [
+    { key: 'footer.privacy', href: '#' },
+    { key: 'footer.legal', href: '#' },
+    { key: 'footer.contact', href: '#' },
+  ]
+
   return (
     <footer className="border-t border-white/5 py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="font-['Bebas_Neue'] text-2xl tracking-widest text-gradient-ocean">BEATDIVER</p>
 
         <div className="flex gap-8 text-xs text-slate-500 tracking-widest uppercase">
-          {['プライバシーポリシー', '特定商取引法に基づく表記', 'コンタクト'].map(link => (
-            <a key={link} href="#" className="hover:text-cyan-400 transition-colors">{link}</a>
+          {links.map(({ key, href }) => (
+            <a key={key} href={href} className="hover:text-cyan-400 transition-colors">
+              {t[key]}
+            </a>
           ))}
         </div>
 
