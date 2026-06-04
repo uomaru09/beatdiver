@@ -21,7 +21,7 @@ export default function Story() {
           </div>
           <div className="mt-10 grid grid-cols-3 gap-6">
             {[
-              { value: '2019', label: 'Founded' },
+              { value: '2025', label: 'Founded' },
               { value: '40+', label: 'Products' },
               { value: '18', label: 'Countries' },
             ].map(stat => (
