@@ -8,7 +8,6 @@ export default function Story() {
   const stats = [
     { value: '2025', label: t['story.stat.founded'] },
     { value: '40+', label: t['story.stat.products'] },
-    { value: '18', label: t['story.stat.countries'] },
   ]
 
   return (
