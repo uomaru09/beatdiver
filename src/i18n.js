@@ -25,11 +25,6 @@ const translations = {
     // Instagram
     'instagram.followBtn': 'Instagram をフォローする',
 
-    // Contact
-    'contact.sub': 'Stay Connected',
-    'contact.desc': '新コレクション、限定ドロップ、サーフカルチャーのニュースをいち早くお届けします。',
-    'contact.subscribe': 'Subscribe',
-
     // Footer
     'footer.privacy': 'プライバシーポリシー',
     'footer.legal': '特定商取引法に基づく表記',
@@ -60,11 +55,6 @@ const translations = {
 
     // Instagram
     'instagram.followBtn': 'Follow on Instagram',
-
-    // Contact
-    'contact.sub': 'Stay Connected',
-    'contact.desc': 'Be the first to hear about new collections, limited drops, and surf culture news.',
-    'contact.subscribe': 'Subscribe',
 
     // Footer
     'footer.privacy': 'Privacy Policy',
