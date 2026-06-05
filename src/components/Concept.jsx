@@ -8,13 +8,10 @@ export default function Concept() {
   return (
     <section id="about" className="grid md:grid-cols-2 min-h-[600px]">
       {/* Left: CONCEPT */}
-      <div className="relative flex flex-col justify-center px-10 md:px-16 py-20 min-h-[480px] bg-[#0d1520] overflow-hidden">
-        {/* Background photo */}
-        <img
-          src="./assets/concept-scubadiving.png"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
+      <div
+        className="relative flex flex-col justify-center px-10 md:px-16 py-20 min-h-[480px] overflow-hidden"
+        style={{ backgroundImage: 'url(./assets/concept-scubadiving.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-[#0a1a2e]/70" />
 
@@ -39,13 +36,10 @@ export default function Concept() {
       </div>
 
       {/* Right: ABOUT */}
-      <div className="relative flex flex-col justify-center px-10 md:px-16 py-20 min-h-[480px] bg-[#111827] overflow-hidden">
-        {/* Background photo */}
-        <img
-          src="./assets/about-picture.png"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
+      <div
+        className="relative flex flex-col justify-center px-10 md:px-16 py-20 min-h-[480px] overflow-hidden"
+        style={{ backgroundImage: 'url(./assets/about-picture.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-[#0d0a00]/65" />
 
