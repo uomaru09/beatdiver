@@ -13,5 +13,10 @@ export default defineConfig({
       usePolling: true,
       interval: 1000,
     },
+    hmr: {
+      host: 'uotanik.devserver.idl-sandbox.com',
+      protocol: 'wss',
+      clientPort: 443,
+    },
   },
 })

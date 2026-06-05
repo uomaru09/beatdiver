@@ -1,112 +1,62 @@
 import { useLang } from '../context/LangContext'
 import translations from '../i18n'
 
-const products = [
+const categories = [
   {
-    id: 1,
-    name: 'WAVE RIDER TEE',
-    category: 'T-Shirt',
-    price: '¥8,800',
-    badge: 'New',
-    color: 'from-cyan-900/40 to-blue-900/40',
-    accent: 'bg-cyan-400',
-    image: 'https://picsum.photos/seed/tee-wave/400/500',
+    id: 'tshirt',
+    name: 'T-SHIRT',
+    image: 'https://picsum.photos/seed/bd-tshirt/400/500',
+    color: 'from-[#1a2744] to-[#0d1a2e]',
   },
   {
-    id: 2,
-    name: 'DEEP SEA TEE',
-    category: 'T-Shirt',
-    price: '¥8,800',
-    badge: 'Best',
-    color: 'from-blue-900/40 to-indigo-900/40',
-    accent: 'bg-blue-400',
-    image: 'https://picsum.photos/seed/tee-deep/400/500',
+    id: 'tanktop',
+    name: 'TANK TOP',
+    image: 'https://picsum.photos/seed/bd-tank/400/500',
+    color: 'from-[#1a1a0d] to-[#0d1520]',
   },
   {
-    id: 3,
-    name: 'CORAL REEF TEE',
-    category: 'T-Shirt',
-    price: '¥9,350',
-    badge: null,
-    color: 'from-teal-900/40 to-cyan-900/40',
-    accent: 'bg-teal-400',
-    image: 'https://picsum.photos/seed/tee-coral/400/500',
+    id: 'cap',
+    name: 'CAP',
+    image: 'https://picsum.photos/seed/bd-cap/400/500',
+    color: 'from-[#0d1a1a] to-[#0a0e14]',
   },
   {
-    id: 4,
-    name: 'PIPELINE TEE',
-    category: 'T-Shirt',
-    price: '¥8,800',
-    badge: 'Limited',
-    color: 'from-indigo-900/40 to-blue-900/40',
-    accent: 'bg-indigo-400',
-    image: 'https://picsum.photos/seed/tee-pipe/400/500',
+    id: 'hoodie',
+    name: 'HOODIE',
+    image: 'https://picsum.photos/seed/bd-hoodie/400/500',
+    color: 'from-[#1a0d1a] to-[#0d0f1a]',
   },
   {
-    id: 5,
-    name: 'OFFSHORE HOODIE',
-    category: 'Hoodie',
-    price: '¥18,700',
-    badge: null,
-    color: 'from-blue-900/40 to-slate-900/40',
-    accent: 'bg-blue-400',
-    image: 'https://picsum.photos/seed/hoodie-off/400/500',
-  },
-  {
-    id: 6,
-    name: 'BARREL SHORTS',
-    category: 'Shorts',
-    price: '¥12,100',
-    badge: null,
-    color: 'from-teal-900/40 to-cyan-900/40',
-    accent: 'bg-teal-400',
-    image: 'https://picsum.photos/seed/shorts-barrel/400/500',
-  },
-  {
-    id: 7,
-    name: 'DRIFT CAP',
-    category: 'Headwear',
-    price: '¥6,600',
-    badge: 'Limited',
-    color: 'from-indigo-900/40 to-blue-900/40',
-    accent: 'bg-indigo-400',
-    image: 'https://picsum.photos/seed/cap-drift/400/500',
+    id: 'goods',
+    name: 'GOODS',
+    image: 'https://picsum.photos/seed/bd-goods/400/500',
+    color: 'from-[#1a1000] to-[#0d0f1a]',
   },
 ]
 
-function ProductCard({ product, t }) {
+function CategoryCard({ cat }) {
   return (
-    <div className="group relative rounded-2xl overflow-hidden bg-ocean-glass hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1">
-      <div className={`h-64 bg-gradient-to-br ${product.color} flex items-center justify-center relative overflow-hidden`}>
-        {product.badge && (
-          <span className={`absolute top-4 left-4 px-3 py-1 ${product.accent} text-black text-xs font-bold rounded-full tracking-wide z-10`}>
-            {product.badge}
-          </span>
-        )}
-        {product.image ? (
-          <img
-            src={product.image}
-            alt={product.name}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        ) : (
-          <svg className="w-20 h-20 text-white/10" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20 7H4C2.9 7 2 7.9 2 9v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-9 8H9v2H7v-2H5v-2h2v-2h2v2h2v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5S14.67 14 15.5 14s1.5.67 1.5 1.5S16.33 17 15.5 17zm3-3c-.83 0-1.5-.67-1.5-1.5S17.67 11 18.5 11s1.5.67 1.5 1.5S19.33 14 18.5 14z"/>
+    <a
+      href="#"
+      className="group relative overflow-hidden block"
+    >
+      <div className={`aspect-[3/4] bg-gradient-to-b ${cat.color} relative overflow-hidden`}>
+        <img
+          src={cat.image}
+          alt={cat.name}
+          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
+        <span className="font-display text-sm tracking-[0.2em] text-white">{cat.name}</span>
+        <span className="text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all duration-200">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e14]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-          <button className="px-6 py-2 bg-cyan-500 text-black font-semibold rounded-full text-sm tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-            {t['collection.addToCart']}
-          </button>
-        </div>
+        </span>
       </div>
-
-      <div className="p-5">
-        <p className="text-xs text-cyan-500 tracking-widest uppercase mb-1">{product.category}</p>
-        <h3 className="font-['Bebas_Neue'] text-xl tracking-wide text-white mb-2">{product.name}</h3>
-        <p className="text-slate-300 font-medium">{product.price}</p>
-      </div>
-    </div>
+    </a>
   )
 }
 
@@ -115,27 +65,51 @@ export default function Collection() {
   const t = translations[lang]
 
   return (
-    <section id="collection" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <p className="text-cyan-400 tracking-[0.4em] text-sm font-medium uppercase mb-3"></p>
-        <h2 className="text-6xl md:text-8xl font-['Bebas_Neue'] text-white">Collection</h2>
-        <p className="mt-4 text-slate-400 max-w-md mx-auto">
-          {t['collection.desc']}
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map(product => (
-          <ProductCard key={product.id} product={product} t={t} />
-        ))}
-      </div>
-
-      <div className="text-center mt-12">
+    <section id="collection" className="py-20 bg-[#0d0f1a]">
+      {/* Section header */}
+      <div className="max-w-7xl mx-auto px-8 mb-10 flex items-end justify-between">
+        <div>
+          <p className="text-[#c8a96e] text-[10px] tracking-[0.4em] font-semibold uppercase mb-3">
+            {t['collection.label']}
+          </p>
+          <h2 className="font-display text-5xl md:text-6xl text-white flex items-center gap-4">
+            Collection
+            {/* Wave/music motif */}
+            <svg className="w-8 h-8 text-[#c8a96e] opacity-60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 12c2-2 4 2 6 0s4-2 6 0 4 2 6 0" />
+            </svg>
+          </h2>
+        </div>
         <a
           href="#"
-          className="inline-block px-8 py-3 border border-slate-600 hover:border-cyan-500 text-slate-300 hover:text-cyan-300 rounded-full transition-all duration-200 tracking-wide text-sm"
+          className="hidden md:inline-flex items-center gap-2 text-xs text-white/50 hover:text-white tracking-[0.15em] uppercase transition-colors"
         >
           {t['collection.viewAll']}
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      {/* Category grid */}
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+          {categories.map(cat => (
+            <CategoryCard key={cat.id} cat={cat} />
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile view all */}
+      <div className="md:hidden text-center mt-8">
+        <a
+          href="#"
+          className="inline-flex items-center gap-2 text-xs text-white/50 hover:text-white tracking-[0.15em] uppercase transition-colors"
+        >
+          {t['collection.viewAll']}
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </a>
       </div>
     </section>
