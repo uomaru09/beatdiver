@@ -11,7 +11,7 @@ export default function Hero() {
       <img
         src="./assets/hero-picture.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-top"
       />
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-[#0a0e1a]/30" />
