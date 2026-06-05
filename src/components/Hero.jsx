@@ -7,22 +7,14 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background gradient simulating beach/ocean scene */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a2744] via-[#0d1a2e] to-[#0a1520]" />
-      {/* Warm overlay for beach feeling */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f1a]/60 via-transparent to-[#1a1000]/40" />
-
-      {/* Decorative image placeholder (right side merchandise spread) */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-20">
-        <div className="w-full h-full bg-gradient-to-l from-[#c8a96e]/20 to-transparent" />
-      </div>
-
-      {/* Subtle wave lines */}
-      <div className="absolute bottom-0 left-0 right-0 opacity-10">
-        <svg viewBox="0 0 1440 120" className="w-full" preserveAspectRatio="none">
-          <path fill="#c8a96e" d="M0,60L80,53C160,47,320,33,480,40C640,47,800,73,960,76.7C1120,80,1280,60,1360,50L1440,40L1440,120L0,120Z" />
-        </svg>
-      </div>
+      {/* Background photo */}
+      <img
+        src="./assets/hero-picture.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-[#0a0e1a]/30" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 pt-28 pb-24">

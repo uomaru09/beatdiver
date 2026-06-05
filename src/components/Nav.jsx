@@ -18,7 +18,6 @@ export default function Nav() {
     { key: 'nav.home', href: '#' },
     { key: 'nav.about', href: '#about' },
     { key: 'nav.collection', href: '#collection' },
-    { key: 'nav.lookbook', href: '#lookbook' },
     { key: 'nav.news', href: '#news' },
     { key: 'nav.contact', href: '#contact' },
   ]

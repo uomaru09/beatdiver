@@ -9,14 +9,14 @@ export default function Concept() {
     <section id="about" className="grid md:grid-cols-2 min-h-[600px]">
       {/* Left: CONCEPT */}
       <div className="relative flex flex-col justify-center px-10 md:px-16 py-20 bg-[#0d1520] overflow-hidden">
-        {/* Underwater atmosphere */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1a2e] to-[#0d1520] opacity-90" />
-        <div className="absolute inset-0 opacity-10">
-          {/* Simulated underwater light rays */}
-          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-[#4a9eff]/60 to-transparent" />
-          <div className="absolute top-0 left-2/4 w-px h-full bg-gradient-to-b from-[#4a9eff]/40 to-transparent" />
-          <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-[#4a9eff]/50 to-transparent" />
-        </div>
+        {/* Background photo */}
+        <img
+          src="./assets/concept-scubadiving.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0a1a2e]/70" />
 
         <div className="relative z-10">
           <p className="text-[#c8a96e] text-[10px] tracking-[0.4em] font-semibold uppercase mb-6">
@@ -40,8 +40,14 @@ export default function Concept() {
 
       {/* Right: ABOUT */}
       <div className="relative flex flex-col justify-center px-10 md:px-16 py-20 bg-[#111827] overflow-hidden">
-        {/* Warm beach atmosphere */}
-        <div className="absolute inset-0 bg-gradient-to-bl from-[#1a1500]/60 to-transparent" />
+        {/* Background photo */}
+        <img
+          src="./assets/about-picture.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0d0a00]/65" />
 
         <div className="relative z-10">
           <p className="text-[#c8a96e] text-[10px] tracking-[0.4em] font-semibold uppercase mb-6">

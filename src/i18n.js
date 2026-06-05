@@ -53,7 +53,7 @@ const translations = {
     'lookbook.heading': 'Lookbook',
 
     // Footer
-    'footer.desc': 'スキューバダイビングとロックミュージックの融合から生まれた、自由なライフスタイルブランド。海でも街でも、自分らしい表現をあなたへ。',
+    'footer.desc': 'スキューバダイビングとロックミュージックの融合から生まれたライフスタイルブランド。海でも街でも自分らしく自由に生きるすべての人のために。',
     'footer.playlist': 'PLAYLIST',
     'footer.playlistName': 'BEAT DIVER',
     'footer.playlistSub': 'Ocean & Rock',

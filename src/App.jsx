@@ -4,7 +4,6 @@ import Concept from './components/Concept'
 import Features from './components/Features'
 import Collection from './components/Collection'
 import MiddleBand from './components/MiddleBand'
-import Lookbook from './components/Lookbook'
 import Footer from './components/Footer'
 import { LangProvider } from './context/LangContext'
 
@@ -18,7 +17,6 @@ export default function App() {
         <Features />
         <Collection />
         <MiddleBand />
-        <Lookbook />
         <Footer />
       </div>
     </LangProvider>
